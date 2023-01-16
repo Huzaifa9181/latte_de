@@ -27,7 +27,8 @@ class Controller extends BaseController
     }
 
     function menu(){
-        return view('menu');
+        $data = product::all();
+        return view('menu',['data'=>$data]);
     }
 
     function contact(){
