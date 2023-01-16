@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Hash;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
     function signup($data){
         $user = new User;
         $password = Hash::make($data['password']);
