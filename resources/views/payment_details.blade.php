@@ -1,22 +1,40 @@
-<x-layout>
-    <x-slot name="title">Payment</x-slot>
-    <x-slot name="data">
-        <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
-        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Payment</h1>
-            <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
-                <p class="m-0 text-white px-2">/</p>
-                <p class="m-0 text-white">Payment</p>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
-    <div class="data p-5">
-        <h1 class="text-center">Your order will be approve by admin order details will be  send for email.
-        </h1>
-    </div>
-    </x-slot>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
 
-</x-layout>
+        #data{
+            padding: 41px;
+            background: black !important;
+            text-align: center;
+            color: white;
+            border: white !important;
+            justify-content: center;
+        }
+
+        #top-head{
+            font-size: calc(1.475rem + 2.7vw);
+        }
+    </style>
+  </head>
+  <body>
+    <div id="data">
+      <h1 id="top-head">Latte Da</h1>
+      <h3>Your Order Successfully Through By Latte De Admin Wait For Her Reply</h3>
+      <p>Hi {{session('name')}},</p>
+      <hr>
+      <h3>Delivery Details</h3>
+      <p>Name : {{session('name')}}</p>
+      <p>Email : {{session('email')}}</p>
+      <hr>
+      <h3>Order Details</h3>
+      <p>Order Number : #{{$order_number}}</p>
+      <p>Item {{sizeof($product_id)}}</p>
+      <p>Total Payment ${{$total}}</p>
+    </div>
+    
+  </body>
+</html>
