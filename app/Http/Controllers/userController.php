@@ -33,9 +33,9 @@ class userController extends Controller
             }else{
                 Session::flash('login', 'false');
                 return redirect('login?password=false');
-            }
-            
-            
+            }    
+        }else{
+            return redirect('signup?account=false');
         };
     }
 
