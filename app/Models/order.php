@@ -14,6 +14,7 @@ class order extends Model
         $order->user_name = $data['user_name'];
         $order->user_id = $data['user_id'];
         $order->products_id = json_encode($data['product_id']);
+        $order->total = $data['total'];
         $save = $order->save();
         if($save){
             return 1;
