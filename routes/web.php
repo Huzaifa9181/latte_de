@@ -5,8 +5,8 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\productController;
-use App\Http\Controllers\deleteController;
 use App\Http\Controllers\paymentController;
+use App\Http\Controllers\dashboardController;
 
 Route::controller(Controller::class)->group(function () {
     Route::get('/', 'index');
@@ -39,6 +39,17 @@ Route::controller(paymentController::class)->group(function () {
     Route::get('delivery', 'delivery')->middleware('cartSession');
     Route::get('payment_details', 'payment_details')->middleware('cartSession');
 });   
+
+Route::controller(dashboardController::class)->group(function () {
+    Route::get('admin_index', 'admin_index')->middleware('adminCheck');
+    Route::get('admin_login', 'admin_login');
+    Route::post('login_handle', 'login_handle');
+    Route::get('admin_logout', 'admin_logout');
+    Route::get('users_list', 'admin_users_table');
+    Route::post('user_delete', 'user_delete');
+});
+
+
 // Route::get('delivery',[productController::class,'delivery']);
 Route::post('handle_book',[bookingController::class,'handle_book']);
 
