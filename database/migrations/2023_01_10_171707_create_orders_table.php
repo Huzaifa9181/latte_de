@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("user_name");
             $table->integer("user_id");
             $table->string("products_id");
+            $table->integer("total");
             $table->timestamps();
         });
     }

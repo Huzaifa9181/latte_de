@@ -46,6 +46,10 @@ class Kernel extends HttpKernel
 
         'cartSession' => [
             \App\Http\Middleware\cartSession::class,
+        ],
+
+        'adminCheck' => [
+            \App\Http\Middleware\adminCheck::class,
         ]
     ];
 
