@@ -7,7 +7,7 @@ use App\Http\Controllers\bookingController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\paymentController;
 use App\Http\Controllers\dashboardController;
-
+use App\Http\Controllers\ImportExportController;
 Route::controller(Controller::class)->group(function () {
     Route::get('/', 'index');
     Route::get('index', 'index');
@@ -49,6 +49,10 @@ Route::controller(dashboardController::class)->group(function () {
     Route::post('user_delete', 'user_delete');
 });
 
+Route::controller(ImportExportController::class)->group(function () {
+    Route::get('export','export')->name('export');
+    Route::post('import','import')->name('import');
+});
 
 // Route::get('delivery',[productController::class,'delivery']);
 Route::post('handle_book',[bookingController::class,'handle_book']);
