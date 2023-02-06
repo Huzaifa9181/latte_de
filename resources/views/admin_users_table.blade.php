@@ -12,6 +12,19 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Latte Da Users</h6>
+            <div class="row">
+                <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3 mt-3">
+                        <input class="form-control" type="file" name="import">
+                    </div>
+                    
+                    <span style="display: flex">
+                        <button type="submit" class="btn btn-success mt-2 mb-2 p-2">Import <i class="bi bi-file-earmark-arrow-down"></i></button>
+                        <a href="{{ route('export') }}" class="btn btn-danger mt-2 mb-2 p-2 mx-2">Export <i class="bi bi-file-earmark-arrow-up"></i></a>
+                    </span>
+                </form>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
