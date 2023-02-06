@@ -35,7 +35,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid p-0 nav-bar mb-5">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+            <a href="index" class="navbar-brand px-lg-4 m-0">
                 <h1 class="m-0 display-4 text-uppercase text-white">Latte Da</h1>
                 @if(session('loggedin') == 'true')
                     <h4 class="text-primary mb-3 font-weight-medium m-0">( Welcome {{session("name")}} )</h4>
@@ -140,6 +140,7 @@
 
  <!-- Template Javascript -->
  <script src="assests/js/main.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 </body>
 
 </html>
